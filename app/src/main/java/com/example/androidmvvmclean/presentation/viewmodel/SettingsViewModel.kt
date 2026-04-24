@@ -29,19 +29,19 @@ class SettingsViewModel @Inject constructor(
     }
 
     fun updateRiskPreference(preference: RiskPreference) {
-        val updated = _preferences.value.copy(riskPreference = preference)
+        val updated = _preferences.value.copy(riskPreference = preference.name)
         _preferences.value = updated
         savePreferences(updated)
     }
 
     fun updateInvestmentHorizon(horizon: InvestmentHorizon) {
-        val updated = _preferences.value.copy(investmentHorizon = horizon)
+        val updated = _preferences.value.copy(investmentHorizon = horizon.name)
         _preferences.value = updated
         savePreferences(updated)
     }
 
     fun updateFundSize(size: FundSize) {
-        val updated = _preferences.value.copy(fundSize = size)
+        val updated = _preferences.value.copy(fundSize = size.name)
         _preferences.value = updated
         savePreferences(updated)
     }

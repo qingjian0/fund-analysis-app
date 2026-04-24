@@ -1,10 +1,14 @@
 package com.example.androidmvvmclean.data.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "user_preferences")
 data class UserPreferences(
-    val id: Int = 1,
-    val riskPreference: RiskPreference = RiskPreference.BALANCED,
-    val investmentHorizon: InvestmentHorizon = InvestmentHorizon.MEDIUM,
-    val fundSize: FundSize = FundSize.MEDIUM,
+    @PrimaryKey val id: Int = 1,
+    val riskPreference: String = RiskPreference.BALANCED.name,
+    val investmentHorizon: String = InvestmentHorizon.MEDIUM.name,
+    val fundSize: String = FundSize.MEDIUM.name,
     val llmApiKey: String = "",
     val useQwen: Boolean = true
 )
