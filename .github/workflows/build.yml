@@ -37,11 +37,8 @@ jobs:
         android-build-tools-version: '34.0.0'
         android-platform-tools-version: '34.0.4'
 
-    - name: Make Gradle wrapper executable
-      run: chmod +x ./gradlew
-
     - name: Build with Gradle
-      run: ./gradlew assembleDebug
+      run: gradle assembleDebug
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
